@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Sistema de Gestão - AMAUC</title>
+		<title>Sistema de Gestão - BAZAR</title>
         <link href="application/images/favicon.png" rel="icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
 					
 					$user = addslashes($_POST['usuario']);
 					$pass = md5($_POST['senha']);
-					$idSession = $_POST['sim_idSession'];
+					$idSession = $_POST['bazar_idSession'];
 					
 					$login = new Login();
 					$login->table = 'usuario';

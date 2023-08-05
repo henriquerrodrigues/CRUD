@@ -13,7 +13,7 @@
 
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <span class="m-r-sm text-muted welcome-message">OLÁ <?php echo $_SESSION['sim_userName'];?></span>
+                <span class="m-r-sm text-muted welcome-message">OLÁ <?php echo $_SESSION['bazar_userName'];?></span>
             </li>
             
             <!--<li class="dropdown">

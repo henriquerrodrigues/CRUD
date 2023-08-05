@@ -253,7 +253,7 @@
 
         <script>
 			//espera 0.5s para tirar o alert.
-			<?php if(($_GET['acao']=='novo_planilha_vlr')&&($_SESSION['sim_userPermissao'] == 0)){ ?>
+			<?php if(($_GET['acao']=='novo_planilha_vlr')&&($_SESSION['bazar_userPermissao'] == 0)){ ?>
 				window.setTimeout(function() {
 					$(".alert").fadeTo(500, 0).slideUp(500, function(){
 						$(this).remove(); 

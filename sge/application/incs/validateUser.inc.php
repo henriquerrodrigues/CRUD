@@ -24,7 +24,7 @@
 		$data  = new DataManipulation();
 		// $utils = new Utils();
 
-		$userConfig['id'] = $_SESSION['sim_userId'];
+		$userConfig['id'] = $_SESSION['bazar_userId'];
 		$sql = "SELECT *
 				FROM usuario
 				WHERE usu_cod = '".$userConfig['id']."'";

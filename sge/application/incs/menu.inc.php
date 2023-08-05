@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_cod = ".$_SESSION['sim_userPermissao'];
+    $sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_cod = ".$_SESSION['bazar_userPermissao'];
     $permissao = $data->find('dynamic', $sql);
 
 	
@@ -44,7 +44,7 @@
         <ul class="nav" id="side-menu">
             <li class="nav-header" style="padding: 27px 25px;">
                 <div class="dropdown profile-element"> 
-                    <a title="Visualizar usuário" href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['sim_userId'];?>);" style="text-decoration:none;">
+                    <a title="Visualizar usuário" href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['bazar_userId'];?>);" style="text-decoration:none;">
                 	<span>
                         <div class="avatar" style="width:60px; height:60px;">
                             <br />
@@ -53,12 +53,12 @@
                     </a>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear"> 
-                        	<span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['sim_userName']; ?></strong></span> 
+                        	<span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['bazar_userName']; ?></strong></span> 
                         	<span class="text-muted text-xs block"><?php echo $permissao[0]['upe_descricao']; ?> <b class="caret"></b></span> 
                         </span> 
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a title="Visualizar usuário" href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['sim_userId'];?>);" style="text-decoration:none;">Meus Dados</a></li>
+                        <li><a title="Visualizar usuário" href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['bazar_userId'];?>);" style="text-decoration:none;">Meus Dados</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -68,7 +68,7 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs" style="color:#000;">
-                        <li><a href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['sim_userId'];?>);">Meus Dados</a></li>
+                        <li><a href="#" onClick="nextPage('?module=cadastro&acao=edita_usuario', <?php echo $_SESSION['bazar_userId'];?>);">Meus Dados</a></li>
                         <li class="divider"></li>
                         <li><a href="?module=index&acao=logout">Sair do Sistema</a></li>
                     </ul>
@@ -124,7 +124,7 @@
             		echo '<li>';
             	}
 
-            	switch($_SESSION['sim_userPermissao']) {
+            	switch($_SESSION['bazar_userPermissao']) {
             		case '1': //ADMINISTRADOR
             			echo '
                         <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Cadastros</span> <span class="fa arrow"></span></a>
@@ -164,7 +164,7 @@
                         echo '<li>';
                     }
 
-                    switch($_SESSION['sim_userPermissao']) {
+                    switch($_SESSION['bazar_userPermissao']) {
                         case '2': //ADMINISTRADOR
                             echo '
                             <a href="#"><i class="fa fa-wrench"></i> <span class="nav-label">Atividade</span> <span class="fa arrow"></span></a>

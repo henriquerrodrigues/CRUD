@@ -22,14 +22,14 @@ class Login{
 
 		if ($db->countLines($result) > 0){
 			for ($i=0;$i<$db->countLines($result);$i++){
-				$_SESSION['sim_userId'] 			= $db->result($result, $i,'usu_cod');
-				$_SESSION['sim_userName'] 		= $db->result($result, $i,'usu_nome');	
-				$_SESSION['sim_userEmail'] 		= $db->result($result, $i,'usu_email');									
-				$_SESSION['sim_userPermissao'] 	= $db->result($result, $i,'upe_cod');
-				$_SESSION['sim_userCliente'] 		= $db->result($result, $i,'cli_cod');
-				$_SESSION['sim_userFuncionario']  = $db->result($result, $i,'fun_cod');
-				$_SESSION['sim_userSetor']  		= $db->result($result, $i,'set_cod');
-				$_SESSION['sim_userSession'] 		= $session;
+				$_SESSION['bazar_userId'] 			= $db->result($result, $i,'usu_cod');
+				$_SESSION['bazar_userName'] 		= $db->result($result, $i,'usu_nome');	
+				$_SESSION['bazar_userEmail'] 		= $db->result($result, $i,'usu_email');									
+				$_SESSION['bazar_userPermissao'] 	= $db->result($result, $i,'upe_cod');
+				$_SESSION['bazar_userCliente'] 		= $db->result($result, $i,'cli_cod');
+				$_SESSION['bazar_userFuncionario']  = $db->result($result, $i,'fun_cod');
+				$_SESSION['bazar_userSetor']  		= $db->result($result, $i,'set_cod');
+				$_SESSION['bazar_userSession'] 		= $session;
 
 				$retorno['login'] 	 = 'Logado';
 				$retorno['nome'] 	 = $db->result($result, $i,'usu_nome');
@@ -38,15 +38,15 @@ class Login{
 				
 				// Cria um cookie com o usu�rio
 				$tempo_cookie = strtotime("+2 day", time());
-				setcookie('sim_userId', $_SESSION['sim_userId'], $tempo_cookie, "/");			
-				setcookie('sim_userName', $_SESSION['sim_userName'], $tempo_cookie, "/");			
-				setcookie('sim_userEmail', $_SESSION['sim_userEmail'], $tempo_cookie, "/");
-				setcookie('sim_userPermissao', $_SESSION['sim_userPermissao'], $tempo_cookie, "/");
-				setcookie('sim_userCliente', $_SESSION['sim_userCliente'], $tempo_cookie, "/");
-				setcookie('sim_userFuncionario', $_SESSION['sim_userFuncionario'], $tempo_cookie, "/");
-				setcookie('sim_userSetor', $_SESSION['sim_userSetor'], $tempo_cookie, "/");
-				setcookie('sim_userSession', $_SESSION['sim_userSession'], $tempo_cookie, "/");				
-				setcookie('sim_idSession', $_SESSION['sim_idSession'], $tempo_cookie, "/");	
+				setcookie('bazar_userId', $_SESSION['bazar_userId'], $tempo_cookie, "/");			
+				setcookie('bazar_userName', $_SESSION['bazar_userName'], $tempo_cookie, "/");			
+				setcookie('bazar_userEmail', $_SESSION['bazar_userEmail'], $tempo_cookie, "/");
+				setcookie('bazar_userPermissao', $_SESSION['bazar_userPermissao'], $tempo_cookie, "/");
+				setcookie('bazar_userCliente', $_SESSION['bazar_userCliente'], $tempo_cookie, "/");
+				setcookie('bazar_userFuncionario', $_SESSION['bazar_userFuncionario'], $tempo_cookie, "/");
+				setcookie('bazar_userSetor', $_SESSION['bazar_userSetor'], $tempo_cookie, "/");
+				setcookie('bazar_userSession', $_SESSION['bazar_userSession'], $tempo_cookie, "/");				
+				setcookie('bazar_idSession', $_SESSION['bazar_idSession'], $tempo_cookie, "/");	
 			}
 		}else{
 			$retorno['login'] 	 = "falha";
@@ -62,7 +62,7 @@ class Login{
 	}
 	
 	function getLogin(){
-		if ((isset($_SESSION['sim_idSession']))&&($_SESSION['sim_idSession'] == $_SESSION['sim_userSession'])){
+		if ((isset($_SESSION['bazar_idSession']))&&($_SESSION['bazar_idSession'] == $_SESSION['bazar_userSession'])){
 			$retorno['logged'] = "yes";
 		}else{
 			$retorno['logged'] = "no";

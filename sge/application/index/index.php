@@ -7,7 +7,7 @@
 			}		
 
 			$randon = md5(uniqid(time()));
-			$_SESSION['sim_idSession'] = $randon;
+			$_SESSION['bazar_idSession'] = $randon;
 			
 			$online = 0;			
 			
@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMWEB</title>
+    <title>BAZAR</title>
     <link href="application/images/favicon.png" rel="icon">
     <link href="library/inspinia/css/bootstrap.min.css" rel="stylesheet">
     <link href="library/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -67,7 +67,7 @@
                 <img src="application/images/logo-amauc.png" style="width: 300px;">                
             </div>            
             <form class="m-t" role="form" action="?module=index&action=valida_senha" method="POST">
-                <input type="hidden"    name="sim_idSession" value="<?php echo $randon;?>" />
+                <input type="hidden"    name="bazar_idSession" value="<?php echo $randon;?>" />
                 <div class="form-group" style="margin-bottom: 0px;">
                     <input type="text" name="usuario" class="form-control" placeholder="Usuário" required="" style="text-align: center;">
                 </div>

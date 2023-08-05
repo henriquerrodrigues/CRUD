@@ -4,28 +4,27 @@
 	function meu_autoloader($nomeClasse) {
 		
 		// Caso não esteja atualizado um cookie, todos são atualizados com o valor atual da variável de sessão
-		if(($_SESSION['sim_userSession'] != $_COOKIE['sim_userSession']) 	  ||
-		($_SESSION['sim_userId'] != $_COOKIE['sim_userId'])	  ||
-		($_SESSION['sim_userName'] != $_COOKIE['sim_userName']) ||
-		($_SESSION['sim_idSession'] != $_COOKIE['sim_idSession']) || 
-		($_SESSION['sim_userPermissao'] != $_COOKIE['sim_userPermissao'])){
-			setcookie('sim_userSession', $_SESSION['sim_userSession'], $tempo_cookie);	
-			setcookie('sim_userId', $_SESSION['sim_userId'], $tempo_cookie);	
-			setcookie('sim_userName', $_SESSION['sim_userName'], $tempo_cookie);	
-			setcookie('sim_session', $_SESSION['sim_session'], $tempo_cookie);	
-			setcookie('sim_idSession', $_SESSION['sim_idSession'], $tempo_cookie);	
-			setcookie('sim_userPermissao', $_SESSION['sim_userPermissao'], $tempo_cookie);	
-			setcookie('sim_userSim', $_SESSION['sim_userSim'], $tempo_cookie);	
+		if(($_SESSION['bazar_userSession'] != $_COOKIE['bazar_userSession']) 	  ||
+		($_SESSION['bazar_userId'] != $_COOKIE['bazar_userId'])	  ||
+		($_SESSION['bazar_userName'] != $_COOKIE['bazar_userName']) ||
+		($_SESSION['bazar_idSession'] != $_COOKIE['bazar_idSession']) || 
+		($_SESSION['bazar_userPermissao'] != $_COOKIE['bazar_userPermissao'])){
+			setcookie('bazar_userSession', $_SESSION['bazar_userSession'], $tempo_cookie);	
+			setcookie('bazar_userId', $_SESSION['bazar_userId'], $tempo_cookie);	
+			setcookie('bazar_userName', $_SESSION['bazar_userName'], $tempo_cookie);	
+			setcookie('bazar_session', $_SESSION['bazar_session'], $tempo_cookie);	
+			setcookie('bazar_idSession', $_SESSION['bazar_idSession'], $tempo_cookie);	
+			setcookie('bazar_userPermissao', $_SESSION['bazar_userPermissao'], $tempo_cookie);	
 		}
 
-		if(!$_SESSION['sim_userSession']){
+		if(!$_SESSION['bazar_userSession']){
 		    // Para não perder sessão
-		    $_SESSION['sim_userId']         	= $_COOKIE['sim_userId'];
-			$_SESSION['sim_userName']       	= $_COOKIE['sim_userName'];
-			$_SESSION['sim_userSession']   		= $_COOKIE['sim_userSession'];
-			$_SESSION['sim_userPermissao']  	= $_COOKIE['sim_userPermissao'];
-			$_SESSION['sim_idSession']      	= $_COOKIE['sim_idSession'];
-			$_SESSION['sim_userSim'] 			= $_COOKIE['sim_userSim'];
+		    $_SESSION['bazar_userId']         	= $_COOKIE['bazar_userId'];
+			$_SESSION['bazar_userName']       	= $_COOKIE['bazar_userName'];
+			$_SESSION['bazar_userSession']   		= $_COOKIE['bazar_userSession'];
+			$_SESSION['bazar_userPermissao']  	= $_COOKIE['bazar_userPermissao'];
+			$_SESSION['bazar_idSession']      	= $_COOKIE['bazar_idSession'];
+			$_SESSION['bazar_userbazar'] 			= $_COOKIE['bazar_userbazar'];
 		}
 		require_once 'library/'.implode('/',explode('_',$nomeClasse)).'.php';
 	}
