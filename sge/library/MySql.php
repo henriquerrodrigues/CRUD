@@ -15,7 +15,7 @@ class MySql
         $server   = 'localhost';	 //Endereço do servidor
 		$user     = 'root';			 // Usuário		
 		$passw	  = '';	     // Senha
-		$database = 'simweb';	 // Nome Banco
+		$database = 'bazar';	 // Nome Banco
 		
 		$this->conn = mysqli_connect($server, $user, $passw, $database);
         mysqli_set_charset($this->conn, "utf8");
