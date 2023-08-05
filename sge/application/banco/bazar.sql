@@ -44,7 +44,7 @@ CREATE TABLE `usuario` (
   `usu_nome` text NOT NULL,
   `usu_login` text NOT NULL,
   `usu_senha` text NOT NULL,
-  `upe_codigo` int(11) NOT NULL,
+  `upe_codigoigo` int(11) NOT NULL,
   `usu_situacao` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -55,7 +55,7 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `usuario_permissao` (
-  `upe_codigo` int(11) NOT NULL,
+  `upe_codigoigo` int(11) NOT NULL,
   `upe_descricao` text NOT NULL,
   `upe_situacao` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -64,7 +64,7 @@ CREATE TABLE `usuario_permissao` (
 -- Extraindo dados da tabela `usuario_permissao`
 --
 
-INSERT INTO `usuario_permissao` (`upe_codigo`, `upe_descricao`, `upe_situacao`) VALUES
+INSERT INTO `usuario_permissao` (`upe_codigoigo`, `upe_descricao`, `upe_situacao`) VALUES
 (1, 'Administrador', 1),
 (2, 'Funcionário', 1),
 (3, 'Cliente', 1);
@@ -89,7 +89,7 @@ ALTER TABLE `usuario`
 -- Índices para tabela `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
-  ADD PRIMARY KEY (`upe_codigo`);
+  ADD PRIMARY KEY (`upe_codigoigo`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -111,7 +111,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
-  MODIFY `upe_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `upe_codigoigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

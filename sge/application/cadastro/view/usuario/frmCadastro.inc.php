@@ -3,7 +3,7 @@
         echo'<script>window.location="?module=index&acao=logout"</script>';
     }  
     
-    $sql = "SELECT upe_cod, upe_descricao FROM usuario_permissao WHERE upe_situacao = 1";
+    $sql = "SELECT upe_codigo, upe_descricao FROM usuario_permissao WHERE upe_situacao = 1";
     $nivel = $data->find('dynamic', $sql);
 
     $sql = "SELECT bazar_cod, bazar_titulo FROM sim WHERE bazar_situacao = 1";
@@ -69,12 +69,12 @@
                         <input name="usu_email" type="text" class="form-control blockenter" id="usu_email" required />
                     </div>
                     <div class="col-sm-3">
-                        <label class="control-label" for="upe_cod">Nível:</label>
-                        <select class="form-control selectpicker" data-live-search="true" data-size="6" name="upe_cod" id="upe_cod" onchange="setor(this.value);" required>
+                        <label class="control-label" for="upe_codigo">Nível:</label>
+                        <select class="form-control selectpicker" data-live-search="true" data-size="6" name="upe_codigo" id="upe_codigo" onchange="setor(this.value);" required>
                             <option value="">-- Selecione --</option>
                             <?php
                                 for ($i = 0; $i < count($nivel); $i++) {
-                                    echo '<option value="' . $nivel[$i]['upe_cod'] . '">' . $nivel[$i]['upe_descricao'] . '</option>';
+                                    echo '<option value="' . $nivel[$i]['upe_codigo'] . '">' . $nivel[$i]['upe_descricao'] . '</option>';
                                 }
                            ?>
                         </select>

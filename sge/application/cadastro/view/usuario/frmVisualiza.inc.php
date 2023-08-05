@@ -65,10 +65,10 @@
                             <option value="">-- Selecione --</option>
                             <?php
                                 for ($i = 0; $i < count($cargos); $i++) {
-                                    if ($result[0]['upe_cod'] == $cargos[$i]['upe_cod']) {
-                                        echo '<option value="' . $cargos[$i]['upe_cod'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
+                                    if ($result[0]['upe_codigo'] == $cargos[$i]['upe_codigo']) {
+                                        echo '<option value="' . $cargos[$i]['upe_codigo'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
                                     } else {
-                                        echo '<option value="' . $cargos[$i]['upe_cod'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
+                                        echo '<option value="' . $cargos[$i]['upe_codigo'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
                                     }
                                 };
                             ?>

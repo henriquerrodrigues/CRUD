@@ -7,7 +7,7 @@ switch ($_GET['acao']) {
     $aux['usu_login']           = $_POST['usu_login'];
     $aux['usu_senha']           = md5($_POST['usu_senha']);
     $aux['usu_email']           = $_POST['usu_email'];
-    $aux['upe_cod']             = $_POST['upe_cod'];
+    $aux['upe_codigo']             = $_POST['upe_codigo'];
     $aux['bazar_cod']             = $_POST['bazar_cod'];
     
     $data->tabela = 'usuario';
@@ -29,8 +29,8 @@ switch ($_GET['acao']) {
     if (isset($_POST['usu_senha'])){
       $aux['usu_senha']         = md5($_POST['usu_senha']);
     }
-    if($_POST['upe_cod']){
-      $aux['upe_cod']           = $_POST['upe_cod'];
+    if($_POST['upe_codigo']){
+      $aux['upe_codigo']           = $_POST['upe_codigo'];
     } 
 
     $data->tabela = 'usuario';

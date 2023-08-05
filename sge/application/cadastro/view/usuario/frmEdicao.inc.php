@@ -5,7 +5,7 @@
     $sql = "SELECT * FROM usuario WHERE usu_cod =" . $_POST['param_0'];
     $result = $data->find('dynamic', $sql);
 
-    $sql = "SELECT upe_cod, upe_descricao FROM usuario_permissao WHERE upe_situacao = 1";
+    $sql = "SELECT upe_codigo, upe_descricao FROM usuario_permissao WHERE upe_situacao = 1";
     $cargos = $data->find('dynamic', $sql);
 
     $sql = "SELECT cid_cod, cid_nome, est_uf FROM cidade WHERE cid_situacao = 1";
@@ -72,14 +72,14 @@
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label class="control-label" for="usu_cod">Nível:</label>
-                                <select class="form-control selectpicker" data-live-search="true" data-size="6" id="usu_cod" name="upe_cod">
+                                <select class="form-control selectpicker" data-live-search="true" data-size="6" id="usu_cod" name="upe_codigo">
                                     <option value="">-- Selecione --</option>
                                     <?php
                                     for ($i = 0; $i < count($cargos); $i++) {
-                                        if ($result[0]['upe_cod'] == $cargos[$i]['upe_cod']) {
-                                            echo '<option value="' . $cargos[$i]['upe_cod'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
+                                        if ($result[0]['upe_codigo'] == $cargos[$i]['upe_codigo']) {
+                                            echo '<option value="' . $cargos[$i]['upe_codigo'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
                                         } else {
-                                            echo '<option value="' . $cargos[$i]['upe_cod'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
+                                            echo '<option value="' . $cargos[$i]['upe_codigo'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
                                         }
                                     };
                                     ?>
@@ -111,14 +111,14 @@
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label class="control-label" for="usu_cod">Nível:</label>
-                                <select class="form-control selectpicker" data-live-search="true" data-size="6" id="usu_cod" name="upe_cod" disabled>
+                                <select class="form-control selectpicker" data-live-search="true" data-size="6" id="usu_cod" name="upe_codigo" disabled>
                                     <option value="">-- Selecione --</option>
                                     <?php
                                     for ($i = 0; $i < count($cargos); $i++) {
-                                        if ($result[0]['upe_cod'] == $cargos[$i]['upe_cod']) {
-                                            echo '<option value="' . $cargos[$i]['upe_cod'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
+                                        if ($result[0]['upe_codigo'] == $cargos[$i]['upe_codigo']) {
+                                            echo '<option value="' . $cargos[$i]['upe_codigo'] . '" selected>' . $cargos[$i]['upe_descricao'] . '</option>';
                                         } else {
-                                            echo '<option value="' . $cargos[$i]['upe_cod'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
+                                            echo '<option value="' . $cargos[$i]['upe_codigo'] . '">' . $cargos[$i]['upe_descricao'] . '</option>';
                                         }
                                     };
                                     ?>

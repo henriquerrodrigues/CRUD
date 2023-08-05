@@ -25,7 +25,7 @@ class Login{
 				$_SESSION['bazar_userId'] 			= $db->result($result, $i,'usu_cod');
 				$_SESSION['bazar_userName'] 		= $db->result($result, $i,'usu_nome');	
 				$_SESSION['bazar_userEmail'] 		= $db->result($result, $i,'usu_email');									
-				$_SESSION['bazar_userPermissao'] 	= $db->result($result, $i,'upe_cod');
+				$_SESSION['bazar_userPermissao'] 	= $db->result($result, $i,'upe_codigo');
 				$_SESSION['bazar_userCliente'] 		= $db->result($result, $i,'cli_cod');
 				$_SESSION['bazar_userFuncionario']  = $db->result($result, $i,'fun_cod');
 				$_SESSION['bazar_userSetor']  		= $db->result($result, $i,'set_cod');

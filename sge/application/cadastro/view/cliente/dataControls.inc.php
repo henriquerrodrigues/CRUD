@@ -25,7 +25,7 @@ switch ($_GET['acao']) {
     $aux2['usu_senha']  = md5($_POST['usu_senha']);
     $aux2['usu_email']  = $_POST['cli_mail'];
     $aux2['cli_cod']    = $id;
-    $aux2['upe_cod']    = 3;
+    $aux2['upe_codigo']    = 3;
 
     //gravando credenciais cliente
     $data->tabela = 'usuario';

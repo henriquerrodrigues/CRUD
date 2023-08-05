@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_cod = ".$_SESSION['bazar_userPermissao'];
+    $sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_codigo = ".$_SESSION['bazar_userPermissao'];
     $permissao = $data->find('dynamic', $sql);
 
 	
