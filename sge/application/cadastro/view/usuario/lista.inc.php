@@ -2,16 +2,16 @@
 if (!isset($_SESSION)) {
     echo '<script>window.location="?module=index&acao=logout"</script>';
 }
-$sql = "SELECT * FROM usuario AS u INNER JOIN usuario_permissao AS p ON u.upe_cod = p.upe_cod WHERE u.usu_situacao = 1";
-$ati = $data->find('dynamic', $sql);
+// $sql = "SELECT * FROM usuario AS u INNER JOIN usuario_permissao AS p ON u.upe_cod = p.upe_cod WHERE u.usu_situacao = 1";
+// $ati = $data->find('dynamic', $sql);
 
-$sql = "SELECT * FROM usuario AS u INNER JOIN usuario_permissao AS p ON u.upe_cod = p.upe_cod WHERE usu_situacao = 0";
-$ina = $data->find('dynamic', $sql);
+// $sql = "SELECT * FROM usuario AS u INNER JOIN usuario_permissao AS p ON u.upe_cod = p.upe_cod WHERE usu_situacao = 0";
+// $ina = $data->find('dynamic', $sql);
 
-$user = [$_SESSION['bazar_userId'], $_SESSION['bazar_userName']];
+// $user = [$_SESSION['bazar_userId'], $_SESSION['bazar_userName']];
 
-$sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_cod = " . $_SESSION['bazar_userPermissao'];
-$usu_cargo = $data->find('dynamic', $sql);
+// $sql = "SELECT upe_descricao FROM usuario_permissao WHERE upe_cod = " . $_SESSION['bazar_userPermissao'];
+// $usu_cargo = $data->find('dynamic', $sql);
 
 ?>
 
